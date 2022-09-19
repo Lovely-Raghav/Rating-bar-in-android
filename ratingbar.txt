@@ -1,0 +1,41 @@
+//rating bar
+//in this we only create layout 
+//we dont create java file
+ Dialog dialog=new Dialog(this);
+                dialog.setContentView(R.layout.activity_dashboard);
+                dialog.show();
+                dialog.setCancelable(false);
+                TextView rate=dialog.findViewById(R.id.rate);
+                RatingBar ratingBar=dialog.findViewById(R.id.ratingBar);
+                rate.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "rating is"+ratingBar.getRating(), Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                    }
+                });
+// xml file 
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RatingBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:numStars="5"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rate"
+        android:text="rate"
+
+        />
+
+</LinearLayout>
